@@ -1,0 +1,15 @@
+-- นำสคริปต์นี้ไปใส่ใน ServerScriptService ใน Roblox Studio
+local Players = game:GetService("Players")
+
+Players.PlayerAdded:Connect(function(player)
+    -- สร้างโฟลเดอร์ leaderstats สำหรับแสดงผลบนตารางคะแนน
+    local leaderstats = Instance.new("Folder")
+    leaderstats.Name = "leaderstats"
+    leaderstats.Parent = player
+
+    -- สร้างค่าเงิน (Coins)
+    local coins = Instance.new("IntValue")
+    coins.Name = "Coins"
+    coins.Value = 0 -- เงินเริ่มต้น
+    coins.Parent = leaderstats
+end)
